@@ -1,6 +1,6 @@
 /**
  * @Date:   2020-02-10T20:05:25+00:00
- * @Last modified time: 2020-02-15T20:32:29+00:00
+ * @Last modified time: 2020-02-15T21:51:03+00:00
  */
 
 
@@ -15,7 +15,7 @@ import Modal from 'react-bootstrap/Modal';
 const Book = props => {
   return (
     <tr>
-      <td><Link to={`/books/${props.book._id}`}>{props.book.title}</Link></td>
+      <td><Link to={`/books/show/${props.book._id}`}>{props.book.title}</Link></td>
       <td><p>{props.book.authors[0].name}</p></td>
       <td><p>{props.book.release_date}</p></td>
       <td><p>{props.book.genre}</p></td>

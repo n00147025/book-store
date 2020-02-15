@@ -1,6 +1,6 @@
 /**
  * @Date:   2020-02-10T20:05:25+00:00
- * @Last modified time: 2020-02-11T21:30:42+00:00
+ * @Last modified time: 2020-02-15T21:45:00+00:00
  */
 
 
@@ -33,6 +33,8 @@ export default class BookShow extends Component {
   componentDidMount() {
     const { id } = this.props.match.params;
 
+    console.log(id);
+
     axios.get(`http://localhost:4000/books/${id}`)
     .then(response => {
       console.log(response);
@@ -64,7 +66,6 @@ export default class BookShow extends Component {
     if (loading) {
       return (
       <div>
-        <h3>Loading...</h3>
       </div>
       )
     }

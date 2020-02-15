@@ -1,6 +1,6 @@
 /**
  * @Date:   2020-02-10T20:05:25+00:00
- * @Last modified time: 2020-02-15T20:07:23+00:00
+ * @Last modified time: 2020-02-15T21:49:27+00:00
  */
 
 
@@ -50,7 +50,7 @@ import './App.css';
               {loggedIn ? <BookCreate/> : <Redirect to="/" />}
             </Route>
             <Route path="/books/update/:id" exact component={BookUpdate} />
-            <Route path="/books/:id" exact component={BookShow} />
+            <Route path="/books/show/:id" exact component={BookShow} />
             <Route path="/register" exact component={Register} />
             <Route path="/login" exact component={(props) => <Login {...props} onLogin={this.authHandler} />} />
           </Col>
