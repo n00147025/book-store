@@ -1,6 +1,6 @@
 /**
  * @Date:   2020-02-10T20:05:25+00:00
- * @Last modified time: 2020-02-15T19:58:43+00:00
+ * @Last modified time: 2020-02-15T20:55:21+00:00
  */
 
 const express = require('express');
@@ -34,6 +34,15 @@ app.get("/", (req, res) => {
 });
 app.use('/books', booksRouter);
 app.use('/account', authRouter);
+
+if (process.env.NODE_ENV === 'production') {
+  // Set static folder
+  app.use(express.static('../build'));
+
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
+  });
+}
 
 const port = process.env.port || 4000;
 
