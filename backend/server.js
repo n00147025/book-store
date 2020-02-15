@@ -1,6 +1,6 @@
 /**
  * @Date:   2020-02-10T20:05:25+00:00
- * @Last modified time: 2020-02-15T20:55:21+00:00
+ * @Last modified time: 2020-02-15T21:27:58+00:00
  */
 
 const express = require('express');
@@ -12,6 +12,7 @@ const booksRouter = require('./routes/books');
 const authRouter = require('./routes/auth');
 const app = express();
 
+app.use(body_parser.urlencoded({ extended: false }));
 app.use(body_parser.json());
 app.use(cors());
 
