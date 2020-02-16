@@ -1,6 +1,6 @@
 /**
  * @Date:   2020-02-10T20:05:25+00:00
- * @Last modified time: 2020-02-16T05:37:25+00:00
+ * @Last modified time: 2020-02-16T13:07:12+00:00
  */
 
 const router = require('express').Router();
@@ -56,8 +56,6 @@ router.route("/:id").get((req, res) => {
 
 router.route("/").post(passport.authenticate('jwt', { session: false }), (req, res) => {
   const token = getToken(req.headers);
-  const movie = req.body;
-
   const book = req.body;
   //validate book
   if(token){
@@ -79,14 +77,13 @@ router.route("/").post(passport.authenticate('jwt', { session: false }), (req, r
     }
 });
 
-router.route("/:id").put(passport.authenticate('jwt', {session: false }), (req, res) => {
+router.route('/:id').put((req, res) => {
   const token = getToken(req.headers);
   const bookId = req.params.id;
   const newBook = req.body;
 
   const {authors, publishers} = req.body;
 
-  if (token) {
     if(!newBook.title) {
         return res.status(400).json({
             message: "Book title can not be empty"
@@ -115,9 +112,6 @@ router.route("/:id").put(passport.authenticate('jwt', {session: false }), (req, 
             message: "Error updating book with id " + bookId
         });
     });
-  } else {
-    return res.status(403).json({success: false, message: 'Unauthorized'});
-  }
 });
 
 router.route("/:id").delete((req, res) => {

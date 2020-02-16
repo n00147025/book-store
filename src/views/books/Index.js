@@ -1,6 +1,6 @@
 /**
  * @Date:   2020-02-10T20:05:25+00:00
- * @Last modified time: 2020-02-16T05:33:28+00:00
+ * @Last modified time: 2020-02-16T06:53:03+00:00
  */
 
 
@@ -62,7 +62,7 @@ export default class BookIndex extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:4000/books')
+    axios.get('http://localhost:4000/books/')
 
     .then(response => {
       console.log("hefasdl");

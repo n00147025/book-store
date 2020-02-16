@@ -1,6 +1,6 @@
 /**
  * @Date:   2020-02-10T21:01:28+00:00
- * @Last modified time: 2020-02-15T21:34:06+00:00
+ * @Last modified time: 2020-02-16T13:03:14+00:00
  */
 
 const JwtStrategy = require('passport-jwt').Strategy;
