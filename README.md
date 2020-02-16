@@ -4,7 +4,7 @@ This application is created using the MERN stack. A user can currently view all 
 Once logged in the user can create, edit and delete books.
 And a user can click on the title of a book to get a more detailed view.
 
-A demo can be found hosted oh Heroku here: http://book-store42.herokuapp.com/
+A demo can be found hosted on Heroku here: http://book-store42.herokuapp.com/
 
 ## Installation Instructions
 
