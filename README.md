@@ -1,3 +1,6 @@
+This application is created using the MERN stack. A user can currently view all the books within the api, register and login. 
+Once logged in the user can create, edit and delete books.
+And a user can click on the title of a book to get a more detailed view.
 
 ## Installation Instructions
 
