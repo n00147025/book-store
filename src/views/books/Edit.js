@@ -1,6 +1,6 @@
 /**
  * @Date:   2020-02-10T20:05:25+00:00
- * @Last modified time: 2020-02-16T13:16:15+00:00
+ * @Last modified time: 2020-02-16T13:54:31+00:00
  */
 
  import React, { Component } from 'react';
@@ -107,9 +107,18 @@
 
      const id = this.props.location.pathname.substr(14);
 
-     axios.put(`http://localhost:4000/books/${id}`, book)
-       .then(res => console.log(res.data))
-       .catch(err => console.log(err));
+     const config = {
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+        Authorization: localStorage.getItem('jwtToken')
+        }
+      };
+
+      axios
+      .put(`http://localhost:4000/books/${id}`, book, config)
+      .then(res => console.log(res.data))
+      .catch(err => console.log(err));
 
      window.location = '/';
    };
