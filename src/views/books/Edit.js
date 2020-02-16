@@ -1,6 +1,6 @@
 /**
  * @Date:   2020-02-10T20:05:25+00:00
- * @Last modified time: 2020-02-11T22:53:57+00:00
+ * @Last modified time: 2020-02-16T05:31:45+00:00
  */
 
  import React, { Component } from 'react';
@@ -34,12 +34,6 @@
        publisherText: ''
      };
 
-     // need to bind 'this' to all functions if not using arrow function..
-     // remember: arrow functions don't have their own context/ 'this'
-
-     // this.handleInputChange = this.handleInputChange.bind(this);
-     // this.onAddGenre = this.onAddGenre.bind(this);
-     // this.onSubmit = this.onSubmit.bind(this);
    }
 
    componentDidMount() {
@@ -135,7 +129,7 @@
 
      return (
      <div>
-       <h3>Add new Book</h3>
+       <h3>Editing book</h3>
        <Form onSubmit={this.onSubmit}>
 
          <Form.Group as={Row} controlId="formHorizontalTitle">
@@ -227,7 +221,7 @@
 
          <Form.Group as={Row}>
            <Col sm={{ span: 10, offset: 2 }}>
-             <Button type="submit">Edit Book</Button>
+             <Button type="submit">Save Edit</Button>
            </Col>
          </Form.Group>
        </Form>

@@ -1,6 +1,6 @@
 /**
  * @Date:   2020-02-10T20:05:25+00:00
- * @Last modified time: 2020-02-15T21:45:00+00:00
+ * @Last modified time: 2020-02-16T04:38:39+00:00
  */
 
 
@@ -73,16 +73,13 @@ export default class BookShow extends Component {
     return (
     <div>
     <br/>
-      <Card>
-        <Card.Header as="h5">{books.title} <span className="float-right">{ this.authorsList() }</span></Card.Header>
-        <Card.Header as="h5">{books.title} <span className="float-right">{ this.publishersList() }</span></Card.Header>
+      <Card border="dark" style={{ width: '18rem' }}>
+        <Card.Header as="h5">{books.title}</Card.Header>
+        <Card.Header as="h5">Author: <span >{ this.authorsList() }</span></Card.Header>
+        <Card.Header as="h5">Publisher: <span>{ this.publishersList() }</span></Card.Header>
 
         <Card.Body>
-          <Card.Title>Synopsis</Card.Title>
-          <Card.Text>
-            There is no synopsis in the DB
-          </Card.Text>
-          <Button as={Link} to="/" variant="primary">View all Books</Button>
+          <Button as={Link} to="/" variant="dark">View all Books</Button>
         </Card.Body>
       </Card>
 

@@ -1,6 +1,6 @@
 /**
  * @Date:   2020-02-10T20:05:25+00:00
- * @Last modified time: 2020-02-15T15:30:30+00:00
+ * @Last modified time: 2020-02-16T05:37:25+00:00
  */
 
 const router = require('express').Router();
@@ -27,7 +27,6 @@ router.route('/').get((req, res) => {
        .then(books => res.json(books))
        .catch(err => res.status(400).json('Error: ' + err));
 
-  // res.json({message: "You are trying to see a list of movies"});
 });
 
 router.route("/:id").get((req, res) => {

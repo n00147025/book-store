@@ -1,6 +1,6 @@
 /**
  * @Date:   2020-02-10T20:05:25+00:00
- * @Last modified time: 2020-02-15T21:51:03+00:00
+ * @Last modified time: 2020-02-16T05:33:28+00:00
  */
 
 
@@ -23,7 +23,7 @@ const Book = props => {
       {
         localStorage.getItem('jwtToken') && (
           <td>
-            <Button><Link to={`/books/update/${props.book._id}`}>Edit</Link></Button>
+            <Button variant="info link" href={`/books/update/${props.book._id}`}>Edit</Button>
             <Button onClick={() => props.handleClose(props.book._id)} variant="danger">Delete</Button>
           </td>
         )
@@ -62,8 +62,10 @@ export default class BookIndex extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:4000/books/')
+    axios.get('http://localhost:4000/books')
+
     .then(response => {
+      console.log("hefasdl");
       console.log(response);
       this.setState({
         books: response.data
